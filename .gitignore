@@ -1,2 +1,3 @@
-# Ignore binaries stored in bin file
+# Ignore binaries and objects stored in bin/ and obj/ file
 bin/
+obj/
