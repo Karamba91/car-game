@@ -8,7 +8,7 @@ class Box{
     public:
         Box();
         Box(bool);
-        void set_occpancy(bool) {occupied = (occupied = true) ? false:true;}
+        void set_occupancy(bool) {occupied = (occupied = true) ? false:true;}
         int is_occupied(void) {return occupied;}
 };
 
@@ -23,8 +23,16 @@ int main(){
     Box box(true);
     cout <<  "The new box is";
     if (!box.is_occupied()){
-        cout << "not";
+        cout << " not";
     }
-    cout << " occupied";
+    cout << " occupied\n";
+    //Change occupancy of object
+    box.set_occupancy(false);
+
+    cout << "Same object but changed varaiable. Box is now";
+    if (!box.is_occupied()){
+        cout << " not";
+    }
+    cout << " occupied\n";
     return 0;
 } 
