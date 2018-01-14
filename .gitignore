@@ -1,3 +1,6 @@
 # Ignore binaries and objects stored in bin/ and obj/ file
 bin/
 obj/
+# Ignore all swap- and swap-original files
+*.swp
+*.swo
