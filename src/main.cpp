@@ -1,8 +1,23 @@
-#include<stdio>
+#include <iostream>
+#include "car_game.h"
 
 using namespace std;
 
 int main(){
-    printf("Hello World!");
+    Box box(true);
+    cout <<  "The new box is";
+    if (!box.is_occupied()){
+        cout << " not";
+    }
+    cout << " occupied\n";
+    //Change occupancy of object
+    box.set_occupancy(false);
+
+    cout << "Same object but changed varaiable. Box is now";
+    if (!box.is_occupied()){
+        cout << " not";
+    }
+    cout << " occupied\n";
+    cout << "This is the new file\n";
     return 0;
-}
+};
