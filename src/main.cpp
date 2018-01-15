@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    Box box(true);
+    /*Box box(true);
     cout <<  "The new box is";
     if (!box.is_occupied()){
         cout << " not";
@@ -18,6 +18,8 @@ int main(){
         cout << " not";
     }
     cout << " occupied\n";
-    cout << "This is the new file\n";
+    cout << "This is the new file\n";*/
+    Board board(2,2);
+    board.print_board();
     return 0;
 };
