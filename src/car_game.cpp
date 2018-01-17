@@ -1,4 +1,5 @@
 #include "../include/car_game.h"
+#include <string>
 #include <stdio.h>
 
 using namespace std;
@@ -16,7 +17,7 @@ Board::Board(){
 }
 Board::Board(int row, int col){
     board = populate_board(row, col);
-    printf("Object with %d row(s) and %d col(s) created", row, col);
+    printf("Object with %d row(s) and %d col(s) created\n", row, col);
 }
 
 vector<Box> Board::generate_row(int col){
@@ -38,7 +39,19 @@ vector<vector<Box> > Board::populate_board(int row, int col){
 }
 
 void Board::print_board(){
-    printf("Will print a graphical layout of the board when implemented\n");
+    string board_str = "";
+    for (int i = 0; i< Board::amount_rows(); i++){
+        vector<Box> temp_row = board[i];
+        for (unsigned int j = 0; j < temp_row.size(); j++){
+            if (board[i][j].is_occupied()){
+                board_str+="1";
+            }else{
+                board_str+="0";
+            }
+        }
+        board_str+="\n";
+    }
+    printf("%s\n",board_str.c_str());
 }
 
 int Board::amount_rows(){

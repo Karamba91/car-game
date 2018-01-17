@@ -12,7 +12,7 @@ class Box{
         Box();
         Box(bool);
         void set_occupancy(bool b) {occupied = b;}
-        int is_occupied(void) {return occupied;}
+        bool is_occupied(void) {return occupied;}
 };
 
 class Board{

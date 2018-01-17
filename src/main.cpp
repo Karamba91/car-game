@@ -22,7 +22,7 @@ int main(){
     cout << " occupied\n";
     cout << "This is the new file\n";*/
 
-    Board board(20,400);
+    Board board(5,7);
     board.print_board();
     cout << "Amounts of rows: " << board.amount_rows() << "\n";
 //    cout << "Amounts of cols: " << board.amount_cols() << "\n";
