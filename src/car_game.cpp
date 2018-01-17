@@ -15,19 +15,19 @@ Board::Board(){
     board = populate_board(2,2);
 }
 Board::Board(int row, int col){
-    board = populate_board(row,col);
+    board = populate_board(row, col);
+    printf("Object with %d row(s) and %d col(s) created", row, col);
 }
 
-list<Box> Board::generate_row(int col){
-    list<Box> l;
-    for(int i = 1; i <= col; i++){
-        l.push_back(Box());
+vector<Box> Board::generate_row(int col){
+    vector<Box> row;
+    for(int i = 0; i < col; i++){
+        row.push_back(Box());
     }
-    return l;
+    return row;
 }
 
-list< list<Box> >Board::populate_board(int row, int col){
-    list<list <Box> > board;
+vector<vector<Box> > Board::populate_board(int row, int col){
     //Just to ignore warning
     //printf("The board is set to be %d-by-%d",row,col);
     // Ignore command ends here
@@ -39,4 +39,12 @@ list< list<Box> >Board::populate_board(int row, int col){
 
 void Board::print_board(){
     printf("Will print a graphical layout of the board when implemented\n");
+}
+
+int Board::amount_rows(){
+    return board.size();
+}
+
+int Board::amount_cols(){
+    return board[0].size();
 }

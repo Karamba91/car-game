@@ -2,7 +2,7 @@
 // Includes definitions of class:
 //      Box
 //--------------------------------
-#include <list>
+#include <vector>
 
 using namespace std;
 
@@ -19,12 +19,14 @@ class Board{
 // Board descibes the gameboard, private class varaible
 // is a list of lists, where the lists represents rows. The lists
 // contains objects Boxes, one per column.
-        list< list<Box> > board;
+        vector<vector<Box> > board;
     public:
         Board(void);
         Board(int, int);
         void print_board();
+        int amount_cols();
+        int amount_rows();
     private:
-        list<Box> generate_row(int);
-        list< list <Box> > populate_board(int,int);
+        vector<Box> generate_row(int);
+        vector<vector<Box> > populate_board(int,int);
 };

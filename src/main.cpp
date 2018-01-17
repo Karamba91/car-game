@@ -1,5 +1,7 @@
 #include <iostream>
+#include <array>
 #include "../include/car_game.h"
+
 
 using namespace std;
 
@@ -19,7 +21,11 @@ int main(){
     }
     cout << " occupied\n";
     cout << "This is the new file\n";*/
-    Board board(2,2);
+
+    Board board(20,400);
     board.print_board();
+    cout << "Amounts of rows: " << board.amount_rows() << "\n";
+//    cout << "Amounts of cols: " << board.amount_cols() << "\n";
+    
     return 0;
 };
