@@ -1,6 +1,7 @@
 #include "../include/car_game.h"
 #include <string>
 #include <stdio.h>
+#include <iostream>
 
 using namespace std;
 
@@ -60,4 +61,29 @@ int Board::amount_rows(){
 
 int Board::amount_cols(){
     return board[0].size();
+}
+bool Board::valid_pos(Car car){
+    if(car.c_horz_dir() && (((car.c_x_pos() + car.c_size()) >= amount_cols()) || (car.c_y_pos() >= amount_rows()))) {
+        cout << "Outside of board, bad initial position or too large vehicle\n";
+        return false;
+    } else if (!car.c_horz_dir() && (((car.c_y_pos() + car.c_size()) >= amount_rows()) || (car.c_x_pos() >= amount_cols()))) {
+        cout << "Outside of board, bad initial position or too large vehicle\n";
+        return false;
+    } else if ((car.c_x_pos() < 0) || (car.c_y_pos() < 0)) {
+        cout << "Outside of board, bad initial position\n";
+        return false;
+    }
+    return true;
+}
+
+void Board::add_car(int x_pos, int y_pos, 
+                    int size, bool horz_dir) {
+    Car car = Car(x_pos, y_pos, size, horz_dir);
+    if (valid_pos(car)) {
+        occupants.push_back(car);
+    }
+}
+
+int Board::amount_cars(){
+    return occupants.size();
 }

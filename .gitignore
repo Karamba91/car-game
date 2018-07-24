@@ -4,3 +4,5 @@ obj/
 # Ignore all swap- and swap-original files
 *.swp
 *.swo
+# Random files
+.DS_Store
